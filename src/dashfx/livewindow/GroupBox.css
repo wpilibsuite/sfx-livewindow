@@ -1,0 +1,32 @@
+
+.group-box {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.group-box:focused {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.group-box > .title {
+    -fx-background-color: #ccc;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10px 10px 0 0;
+    -fx-border-insets: 0;
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-border-radius: 10px 10px 0 0;
+	-fx-padding: 0.167em;
+	-fx-margin: 0;
+}
+
+.group-box:focused > .title {
+    -fx-color: transparent;
+}
+
+.group-box > *.content {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0.167em;
+	-fx-border-color: black;
+	-fx-border-width: 0 1 1 1;
+}

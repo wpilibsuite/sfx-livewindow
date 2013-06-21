@@ -1,0 +1,12 @@
+API: 0.1
+Name: LiveWindow
+Description: LiveWindow and Test Mode plugins
+Version: 0.0.1a1
+Plugin ID: D22D6E04-92D9-477C-B2DF-4F5C3FC427C8
+View Controllers:
+-
+  Class: dashfx.livewindow.LiveWindowViewController
+  Addable: false
+  Max: 1
+  Default: 1
+  Closable: false
