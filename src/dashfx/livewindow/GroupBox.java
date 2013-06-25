@@ -46,11 +46,19 @@ public class GroupBox extends PaneControlBase<VBox>
 
 	private void gbInit()
 	{
+		ui.setStyle("");
 		tp = new TitledPane("", ui);
 		tp.getStyleClass().add("group-box");
 		tp.getStylesheets().add(getClass().getResource("/dashfx/livewindow/GroupBox.css").toString());
+		tp.setCollapsible(false);
 		tp.textProperty().bind(nameProperty());
 		setDataMode(DataPaneMode.Nested);
+	}
+
+	@Override
+	public Node getUi()
+	{
+		return tp;
 	}
 
 	@Override
