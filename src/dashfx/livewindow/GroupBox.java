@@ -16,35 +16,100 @@
  */
 package dashfx.livewindow;
 
+import dashfx.controls.bases.PaneControlBase;
 import dashfx.lib.controls.Category;
 import dashfx.lib.controls.Designable;
+import dashfx.lib.controls.ResizeDirections;
+import dashfx.lib.data.DataPaneMode;
+import dashfx.lib.data.ZPositions;
+import java.util.EnumSet;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 
 /**
  *
  * @author patrick
  */
-@Category("Grouping")
-@Designable
-public class GroupBox extends TitledPane
+@Designable(value = "LW Box", description = "Live Window VBox Grouping with title")
+public class GroupBox extends PaneControlBase<VBox>
 {
+	TitledPane tp;
 
 	public GroupBox()
 	{
-		gbInit();
-	}
-
-	public GroupBox(String string, Node node)
-	{
-		super(string, node);
+		super(new VBox());
 		gbInit();
 	}
 
 	private void gbInit()
 	{
-		setSkinClassName("group-box");
-		getStylesheets().add(getClass().getResource("/dashfx/livewindow/GroupBox.css").toString());
+		tp = new TitledPane("", ui);
+		tp.getStyleClass().add("group-box");
+		tp.getStylesheets().add(getClass().getResource("/dashfx/livewindow/GroupBox.css").toString());
+		tp.textProperty().bind(nameProperty());
+		setDataMode(DataPaneMode.Nested);
 	}
 
+	@Override
+	public EnumSet<ResizeDirections> getSupportedOps()
+	{
+		return EnumSet.of(ResizeDirections.UpDown);
+	}
+
+	@Override
+	public boolean isJumps()
+	{
+		return true;
+	}
+
+	@Override
+	public boolean isAppendable()
+	{
+		return true;
+	}
+
+	@Override
+	public void BeginDragging(Node[] overlays, Region[] childs, double x, double y, double sizeX, double sizeY, double posX, double posY)
+	{
+		//TODO: fixme
+	}
+
+	@Override
+	public void ContinueDragging(double dx, double dy)
+	{
+		//TODO: fixme
+	}
+
+	@Override
+	public void FinishDragging()
+	{
+		//TODO: fixme
+	}
+
+	@Override
+	public void addChildAt(Node child, double x, double y)
+	{
+		getChildren().add(child);
+	}
+
+	@Override
+	public void editNested(Node overlay, Runnable onExitRequest)
+	{
+		//TODO: fixme
+	}
+
+	@Override
+	public void exitNested()
+	{
+		//TODO: fixme
+	}
+
+	@Override
+	public void zEdit(Node child, ZPositions diff)
+	{
+		//TODO: fixme
+	}
 }
