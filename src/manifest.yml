@@ -11,6 +11,16 @@ View Controllers:
   Default: 1
   Closable: false
 Controls:
-  -
+-
     Class: dashfx.livewindow.GroupBox
     Group Type: LW Subsystem
+-
+  Name: Analog LiveWindow
+  Description: Default Analog livewindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Analog Input
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+
+
