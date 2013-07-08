@@ -14,13 +14,145 @@ Controls:
 -
     Class: dashfx.livewindow.GroupBox
     Group Type: LW Subsystem
+    Save Children: true
 -
   Name: Analog LiveWindow
-  Description: Default Analog livewindow
+  Description: Default Analog LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
   Group Type: Analog Input
   Save Children: false
   Sealed: true
   Placeholders: [Name, Value]
+  Defaults:
+    Value.min: 0
+    Value.max: 5
+-
+  Name: Servo LiveWindow
+  Description: Default Servo LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Servo
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Defaults:
+    Value.min: 0
+-
+  Name: Speed Controller LiveWindow
+  Description: Default Speed Controller LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Speed Controller
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+-
+  Name: Digital Input LiveWindow
+  Description: Default Digital Input LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Digital Input
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: RedGreen
+-
+  Name: Digital Output LiveWindow
+  Description: Default Digital Output LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Digital Output
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: RedGreen
+-
+  Name: Solenoid LiveWindow
+  Description: Default Solenoid LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Solenoid
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: RedGreen
+-
+  Name: Relay LiveWindow
+  Description: Default Relay LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Relay
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Label
+-
+  Name: Ultrasonic LiveWindow
+  Description: Default Ultrasonic LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Ultrasonic
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Label
+-
+  Name: Gear Tooth Sensor LiveWindow
+  Description: Default Gear Tooth LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Gear Tooth
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Label
+-
+  Name: Double Solenoid LiveWindow
+  Description: Default 2xSolenoid LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Double Solenoid
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Label
+-
+  Name: Accelerometer LiveWindow
+  Description: Default Accelerometer LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Accelerometer
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Label
+-
+  Name: Compass LiveWindow
+  Description: Default Compass LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Compass
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Compass
+-
+  Name: Counter LiveWindow
+  Description: Default Counter LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Counter
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Label
+-
+  Name: Gyro LiveWindow
+  Description: Default Gyro LiveWindow
+  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Group Type: Gyro
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Value]
+  Placeholder Override:
+    Value: Compass
 
 
