@@ -51,8 +51,20 @@ public class LiveWindowViewController
 
 	public boolean isShouldAdd(String name, ObservableList<String> all)
 	{
-		//TODO: not this easy, need to avoid certain things like enabled
-		return name.startsWith("LiveWindow") && !name.contains("~STATUS~");
+
+		if (name.startsWith("LiveWindow"))
+		{
+			if (name.contains("~STATUS~"))
+			{
+				return false;
+			}
+			if (name.endsWith("Name"))
+				return false;
+			else
+				return true;
+		}
+		else
+			return false;
 	}
 
 	/**
