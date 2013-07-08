@@ -154,5 +154,12 @@ Controls:
   Placeholders: [Name, Value]
   Placeholder Override:
     Value: Compass
-
+-
+  Name: Compressor LiveWindow
+  Description: Default Compressor LiveWindow
+  Source: /dashfx/livewindow/controls/Compressor.fxml
+  Group Type: Compressor
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Enabled, PSwitch]
 

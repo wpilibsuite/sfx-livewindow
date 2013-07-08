@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import dashfx.lib.controls.*?>
+<?import dashfx.controls.*?>
+
+<DataVBox dataMode="Nested" xmlns:fx="http://javafx.com/fxml">
+	<ui minHeight="51.0" prefHeight="60.0" prefWidth="341.0" style="/*Intentionally blank*/">
+		<children>
+			<HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+
+				<children>
+					<Separator prefWidth="20.0" />
+					<Placeholder fx:id="Name" propList="name: Name" controlPath="Label">
+						<HBox.margin>
+							<Insets left="6.0" right="6.0" />
+						</HBox.margin>
+					</Placeholder>
+					<Separator prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+				</children>
+			</HBox>
+			<HBox prefHeight="100.0" prefWidth="200.0" spacing="6.0" VBox.vgrow="ALWAYS">
+				<children>
+					<Placeholder fx:id="Enabled" controlPath="RedGreen" propList="name: Enabled" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+					<Placeholder fx:id="PSwitch" controlPath="RedGreen" propList="name: Pressure Switch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+				</children>
+			</HBox>
+		</children>
+	</ui>
+</DataVBox>
