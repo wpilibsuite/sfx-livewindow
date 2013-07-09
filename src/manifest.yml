@@ -162,4 +162,12 @@ Controls:
   Save Children: false
   Sealed: true
   Placeholders: [Name, Enabled, PSwitch]
+-
+  Name: Encoder LiveWindow
+  Description: Default Encoder LiveWindow
+  Source: /dashfx/livewindow/controls/Encoder.fxml
+  Group Type: Encoder
+  Save Children: false
+  Sealed: true
+  Placeholders: [Name, Speed, Distance, DPT]
 
