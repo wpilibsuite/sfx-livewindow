@@ -166,7 +166,7 @@ Controls:
   Name: Encoder LiveWindow
   Description: Default Encoder LiveWindow
   Source: /dashfx/livewindow/controls/Encoder.fxml
-  Group Type: Encoder
+  Group Type: Quadrature Encoder
   Save Children: false
   Sealed: true
   Placeholders: [Name, Speed, Distance, DPT]
