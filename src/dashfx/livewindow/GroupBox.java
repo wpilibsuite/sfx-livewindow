@@ -17,15 +17,17 @@
 package dashfx.livewindow;
 
 import dashfx.controls.bases.PaneControlBase;
-import dashfx.lib.controls.Category;
 import dashfx.lib.controls.Designable;
 import dashfx.lib.controls.ResizeDirections;
 import dashfx.lib.data.DataPaneMode;
 import dashfx.lib.data.ZPositions;
 import java.util.EnumSet;
-import javafx.collections.ObservableList;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.scene.Node;
 import javafx.scene.control.TitledPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
@@ -37,6 +39,9 @@ import javafx.scene.layout.VBox;
 public class GroupBox extends PaneControlBase<VBox>
 {
 	TitledPane tp;
+	private EventHandler<Event> slurper;
+	private Node nestedChild;
+	private Runnable exitRequest;
 
 	public GroupBox()
 	{
@@ -53,6 +58,30 @@ public class GroupBox extends PaneControlBase<VBox>
 		tp.setCollapsible(false);
 		tp.textProperty().bind(nameProperty());
 		setDataMode(DataPaneMode.Nested);
+		slurper = new EventHandler<Event>()
+		{
+			@Override
+			public void handle(Event t)
+			{
+				Node tpar = (Node)t.getTarget();
+				while (tpar != null && tpar != nestedChild)
+				{
+					tpar = tpar.getParent();
+				}
+				if (tpar == nestedChild)
+					return;
+				// schluuurp!
+				t.consume();
+				if (t.getEventType() == MouseEvent.MOUSE_CLICKED)
+				{
+					if (((MouseEvent) t).getClickCount() > 1)
+					{
+						//exit
+						exitRequest.run();
+					}
+				}
+			}
+		};
 	}
 
 	@Override
@@ -106,13 +135,23 @@ public class GroupBox extends PaneControlBase<VBox>
 	@Override
 	public void editNested(Node overlay, Runnable onExitRequest)
 	{
-		//TODO: fixme
+		if (nestedChild == null)
+		{
+			nestedChild = overlay;
+			exitRequest = onExitRequest;
+			getUi().addEventFilter(EventType.ROOT, slurper);
+		}
 	}
 
 	@Override
 	public void exitNested()
 	{
-		//TODO: fixme
+		if (nestedChild != null)
+		{
+			getUi().removeEventFilter(EventType.ROOT, slurper);
+			nestedChild = null;
+			exitRequest = null;
+		}
 	}
 
 	@Override
