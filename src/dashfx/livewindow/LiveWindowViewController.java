@@ -90,4 +90,9 @@ public class LiveWindowViewController
 	{
 		return layoutManager;
 	}
+
+	public void onFocusRequest(FocusRunnable r)
+	{
+		lwp.onFocusRequest(r);
+	}
 }

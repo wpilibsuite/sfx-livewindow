@@ -36,10 +36,11 @@ import javafx.scene.text.TextAlignment;
  */
 public class LiveWindowPane extends DataFlowLayoutPane implements ChangeListener<Object>
 {
-	SmartValue enabled;
-	StackPane sp = new StackPane();
-	Label lbl = new Label("LiveWindow Mode is not enabled.\n"
-						  + "Please switch to Test Mode on the DriverStation to enable LiveWindow Mode");
+	private SmartValue enabled;
+	private StackPane sp = new StackPane();
+	private Label lbl = new Label("LiveWindow Mode is not enabled.\n"
+								  + "Please switch to Test Mode on the DriverStation to enable LiveWindow Mode");
+	private FocusRunnable focusRequester;
 
 	public LiveWindowPane()
 	{
@@ -80,11 +81,22 @@ public class LiveWindowPane extends DataFlowLayoutPane implements ChangeListener
 		boolean visit = (Boolean) t1;
 		lbl.setVisible(!visit);
 		ui.setVisible(visit);
+		if (focusRequester != null)
+		{
+			focusRequester.preferFocus(visit);
+		}
 	}
 
 	@Override
 	public Node getUi()
 	{
 		return sp;
+	}
+
+	public void onFocusRequest(FocusRunnable r)
+	{
+		focusRequester = r;
+		if (enabled != null)
+			r.preferFocus((Boolean) enabled.getValue());
 	}
 }
