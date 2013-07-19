@@ -18,11 +18,16 @@ package dashfx.livewindow;
 
 import dashfx.controls.bases.PaneControlBase;
 import dashfx.lib.controls.Category;
+import dashfx.lib.controls.Control;
 import dashfx.lib.controls.Designable;
 import dashfx.lib.controls.ResizeDirections;
+import dashfx.lib.data.DataCoreProvider;
 import dashfx.lib.data.DataPaneMode;
+import dashfx.lib.data.SmartValue;
 import dashfx.lib.data.ZPositions;
 import java.util.EnumSet;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
@@ -44,6 +49,7 @@ public class GroupBox extends PaneControlBase<VBox>
 	private EventHandler<Event> slurper;
 	private Node nestedChild;
 	private Runnable exitRequest;
+	private SmartValue sv;
 
 	public GroupBox()
 	{
@@ -58,14 +64,13 @@ public class GroupBox extends PaneControlBase<VBox>
 		tp.getStyleClass().add("group-box");
 		tp.getStylesheets().add(getClass().getResource("/dashfx/livewindow/GroupBox.css").toString());
 		tp.setCollapsible(false);
-		tp.textProperty().bind(nameProperty());
 		setDataMode(DataPaneMode.Nested);
 		slurper = new EventHandler<Event>()
 		{
 			@Override
 			public void handle(Event t)
 			{
-				Node tpar = (Node)t.getTarget();
+				Node tpar = (Node) t.getTarget();
 				while (tpar != null && tpar != nestedChild)
 				{
 					tpar = tpar.getParent();
@@ -84,7 +89,35 @@ public class GroupBox extends PaneControlBase<VBox>
 				}
 			}
 		};
+		addControl(nameControl);
 	}
+	private Control nameControl = new Control()
+	{
+		@Override
+		public Node getUi()
+		{
+			throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		}
+
+		@Override
+		public void registered(DataCoreProvider provider)
+		{
+			tp.textProperty().unbind();
+			if (sv != null)
+				sv.removeListener(cli);
+			sv = getObservable("Name");
+			sv.addListener(cli);
+			tp.setText(sv.asString());
+		}
+	};
+	private ChangeListener cli = new ChangeListener<Object>()
+	{
+		@Override
+		public void changed(ObservableValue<? extends Object> ov, Object t, Object t1)
+		{
+			tp.setText(t1.toString());
+		}
+	};
 
 	@Override
 	public Node getUi()
