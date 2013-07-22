@@ -186,4 +186,10 @@ Controls:
   Save Children: false
   Sealed: true
   Placeholders: [Name, Speed, Distance, DPT]
-
+-
+  Name: Button LiveWindow
+  Description: Default Button LiveWindow
+  Class: dashfx.livewindow.controls.ButtonControl
+  Group Type: Button
+  Category: LiveWindow
+  Sealed: true
