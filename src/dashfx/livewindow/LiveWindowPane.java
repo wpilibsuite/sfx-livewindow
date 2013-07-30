@@ -67,7 +67,7 @@ public class LiveWindowPane extends DataFlowLayoutPane implements ChangeListener
 			enabled.addListener(this);
 			try
 			{
-				changed(null, null, enabled.getValue());
+				changed(null, null, enabled.getData().asBoolean());
 			}
 			catch (Throwable t)
 			{
@@ -97,6 +97,6 @@ public class LiveWindowPane extends DataFlowLayoutPane implements ChangeListener
 	{
 		focusRequester = r;
 		if (enabled != null)
-			r.preferFocus((Boolean) enabled.getValue());
+			r.preferFocus(enabled.getData().asBoolean());
 	}
 }

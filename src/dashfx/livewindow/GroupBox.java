@@ -107,7 +107,7 @@ public class GroupBox extends PaneControlBase<VBox>
 				sv.removeListener(cli);
 			sv = getObservable("Name");
 			sv.addListener(cli);
-			tp.setText(sv.asString());
+			tp.setText(sv.getData().asString());
 		}
 	};
 	private ChangeListener cli = new ChangeListener<Object>()
