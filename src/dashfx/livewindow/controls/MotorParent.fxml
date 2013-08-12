@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import dashfx.lib.controls.*?>
+<?import dashfx.controls.*?>
+<?language javascript?>
+
+<DataVBox fx:id="base" dataMode="Nested" onRegisterRequest="replaced()" xmlns:fx="http://javafx.com/fxml">
+	<fx:script>
+		var runnerVp = null;
+		function replaced()
+		{
+			runnerVp = base.getObservable("Value");
+		}
+
+		function zeroit()
+		{
+			runnerVp.setValue(0.0);
+		}
+	</fx:script>
+	<ui minHeight="51.0" prefHeight="60.0" prefWidth="341.0" style="/*Intentionally blank*/">
+		<children>
+			<HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+				<children>
+					<Separator prefWidth="20.0" />
+					<Placeholder fx:id="Name" propList="name: Name, showLabel: false" controlPath="Label">
+						<HBox.margin>
+							<Insets left="6.0" right="6.0" />
+						</HBox.margin>
+					</Placeholder>
+					<Separator prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+				</children>
+			</HBox>
+			<HBox>
+				<Placeholder fx:id="Value" controlPath="Value Meter" propList="name: Value, showLabel: false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+				<Button maxHeight="1.7976931348623157E308" text="Zero" onAction="zeroit()"  />
+			</HBox>
+		</children>
+	</ui>
+</DataVBox>

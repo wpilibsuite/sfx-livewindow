@@ -30,7 +30,7 @@ Controls:
 -
   Name: Servo LiveWindow
   Description: Default Servo LiveWindow
-  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Source: /dashfx/livewindow/controls/MotorParent.fxml
   Group Type: Servo
   Save Children: false
   Category: LiveWindow
@@ -41,7 +41,7 @@ Controls:
 -
   Name: Speed Controller LiveWindow
   Description: Default Speed Controller LiveWindow
-  Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Source: /dashfx/livewindow/controls/MotorParent.fxml
   Group Type: Speed Controller
   Save Children: false
   Category: LiveWindow
