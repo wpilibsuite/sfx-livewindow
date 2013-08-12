@@ -19,6 +19,7 @@ Controls:
   Name: Analog LiveWindow
   Description: Default Analog LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/AnalogLW.png
   Group Type: Analog Input
   Save Children: false
   Category: LiveWindow
@@ -31,6 +32,7 @@ Controls:
   Name: Servo LiveWindow
   Description: Default Servo LiveWindow
   Source: /dashfx/livewindow/controls/MotorParent.fxml
+  Image: /dashfx/livewindow/res/ServoLW.png
   Group Type: Servo
   Save Children: false
   Category: LiveWindow
@@ -42,6 +44,7 @@ Controls:
   Name: Speed Controller LiveWindow
   Description: Default Speed Controller LiveWindow
   Source: /dashfx/livewindow/controls/MotorParent.fxml
+  Image: /dashfx/livewindow/res/SpeedControllerLW.png
   Group Type: Speed Controller
   Save Children: false
   Category: LiveWindow
@@ -51,6 +54,7 @@ Controls:
   Name: Digital Input LiveWindow
   Description: Default Digital Input LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/DigitalInputLW.png
   Group Type: Digital Input
   Save Children: false
   Category: LiveWindow
@@ -62,6 +66,7 @@ Controls:
   Name: Digital Output LiveWindow
   Description: Default Digital Output LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/DigitalOutputLW.png
   Group Type: Digital Output
   Save Children: false
   Category: LiveWindow
@@ -73,6 +78,7 @@ Controls:
   Name: Solenoid LiveWindow
   Description: Default Solenoid LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/SolenoidLW.png
   Group Type: Solenoid
   Save Children: false
   Category: LiveWindow
@@ -84,6 +90,7 @@ Controls:
   Name: Relay LiveWindow
   Description: Default Relay LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/RelayLW.png
   Group Type: Relay
   Save Children: false
   Sealed: true
@@ -95,6 +102,7 @@ Controls:
   Name: Ultrasonic LiveWindow
   Description: Default Ultrasonic LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/UltrasonicLW.png
   Group Type: Ultrasonic
   Save Children: false
   Sealed: true
@@ -106,6 +114,7 @@ Controls:
   Name: Gear Tooth Sensor LiveWindow
   Description: Default Gear Tooth LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/GTSLW.png
   Group Type: Gear Tooth
   Save Children: false
   Sealed: true
@@ -117,6 +126,7 @@ Controls:
   Name: Double Solenoid LiveWindow
   Description: Default 2xSolenoid LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/DoubleSolenoidLW.png
   Group Type: Double Solenoid
   Save Children: false
   Category: LiveWindow
@@ -128,6 +138,7 @@ Controls:
   Name: Accelerometer LiveWindow
   Description: Default Accelerometer LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/AccelerometerLW.png
   Group Type: Accelerometer
   Save Children: false
   Category: LiveWindow
@@ -139,6 +150,7 @@ Controls:
   Name: Compass LiveWindow
   Description: Default Compass LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/CompassLW.png
   Group Type: Compass
   Save Children: false
   Category: LiveWindow
@@ -150,6 +162,7 @@ Controls:
   Name: Counter LiveWindow
   Description: Default Counter LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/CounterLW.png
   Group Type: Counter
   Category: LiveWindow
   Save Children: false
@@ -161,6 +174,7 @@ Controls:
   Name: Gyro LiveWindow
   Description: Default Gyro LiveWindow
   Source: /dashfx/livewindow/controls/SensorParent.fxml
+  Image: /dashfx/livewindow/res/GyroLW.png
   Group Type: Gyro
   Save Children: false
   Category: LiveWindow
@@ -172,6 +186,7 @@ Controls:
   Name: Compressor LiveWindow
   Description: Default Compressor LiveWindow
   Source: /dashfx/livewindow/controls/Compressor.fxml
+  Image: /dashfx/livewindow/res/CompressorLW.png
   Group Type: Compressor
   Category: LiveWindow
   Save Children: false
@@ -181,6 +196,7 @@ Controls:
   Name: Encoder LiveWindow
   Description: Default Encoder LiveWindow
   Source: /dashfx/livewindow/controls/Encoder.fxml
+  Image: /dashfx/livewindow/res/EncoderLW.png
   Group Type: Quadrature Encoder
   Category: LiveWindow
   Save Children: false
@@ -190,6 +206,7 @@ Controls:
   Name: Button LiveWindow
   Description: Default Button LiveWindow
   Class: dashfx.livewindow.controls.ButtonControl
+  Image: /dashfx/livewindow/res/ButtonLW.png
   Group Type: Button
   Category: LiveWindow
   Sealed: true
