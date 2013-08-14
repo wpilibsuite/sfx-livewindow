@@ -12,6 +12,7 @@
 
 <DataVBox fx:id="base" dataMode="Nested" onRegisterRequest="replaced()" xmlns:fx="http://javafx.com/fxml">
 	<fx:script>
+		importClass(Packages.dashfx.lib.data.values.DoubleSmartValue);
 		var runnerVp = null;
 		function replaced()
 		{
@@ -20,7 +21,7 @@
 
 		function zeroit()
 		{
-			runnerVp.setValue(0.0);
+			runnerVp.setData(new Packages.dashfx.lib.data.values.DoubleSmartValue(0.0));
 		}
 	</fx:script>
 	<ui minHeight="51.0" prefHeight="60.0" prefWidth="341.0" style="/*Intentionally blank*/">
