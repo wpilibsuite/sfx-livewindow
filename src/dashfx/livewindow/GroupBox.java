@@ -49,7 +49,15 @@ public class GroupBox extends PaneControlBase<VBox>
 	private EventHandler<Event> slurper;
 	private Node nestedChild;
 	private Runnable exitRequest;
-	private SmartValue sv;
+	private ChangeListener nameChanged = new ChangeListener() {
+
+		@Override
+		public void changed(ObservableValue ov, Object t, Object t1)
+		{
+			String[] bits = t1.toString().split("/");
+			tp.setText(bits[bits.length-1]);
+		}
+	};
 
 	public GroupBox()
 	{
@@ -89,35 +97,8 @@ public class GroupBox extends PaneControlBase<VBox>
 				}
 			}
 		};
-		addControl(nameControl);
+		nameProperty().addListener(nameChanged);
 	}
-	private Control nameControl = new Control()
-	{
-		@Override
-		public Node getUi()
-		{
-			throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-		}
-
-		@Override
-		public void registered(DataCoreProvider provider)
-		{
-			tp.textProperty().unbind();
-			if (sv != null)
-				sv.removeListener(cli);
-			sv = getObservable("Name");
-			sv.addListener(cli);
-			tp.setText(sv.getData().asString());
-		}
-	};
-	private ChangeListener cli = new ChangeListener<Object>()
-	{
-		@Override
-		public void changed(ObservableValue<? extends Object> ov, Object t, Object t1)
-		{
-			tp.setText(t1.toString());
-		}
-	};
 
 	@Override
 	public Node getUi()
