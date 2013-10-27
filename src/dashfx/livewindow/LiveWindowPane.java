@@ -67,7 +67,10 @@ public class LiveWindowPane extends DataFlowLayoutPane implements ChangeListener
 			enabled.addListener(this);
 			try
 			{
-				changed(null, null, enabled.getData().asBoolean());
+				if (enabled.getData().isBoolean())
+					changed(null, null, enabled.getData().asBoolean());
+				else
+					changed(null, null, false);
 			}
 			catch (Throwable t)
 			{
