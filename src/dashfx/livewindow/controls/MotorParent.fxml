@@ -29,7 +29,7 @@
 			<HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
 				<children>
 					<Separator prefWidth="20.0" />
-					<Placeholder fx:id="Name" propList="name: Name, showLabel: false" controlPath="Label">
+					<Placeholder fx:id="Name" propList="name: Name" controlPath="Label">
 						<HBox.margin>
 							<Insets left="6.0" right="6.0" />
 						</HBox.margin>
@@ -38,7 +38,7 @@
 				</children>
 			</HBox>
 			<HBox>
-				<Placeholder fx:id="Value" controlPath="Value Meter" propList="name: Value, showLabel: false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+				<Placeholder fx:id="Value" controlPath="Value Meter" propList="name: Value" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
 				<Button maxHeight="1.7976931348623157E308" text="Zero" onAction="zeroit()"  />
 			</HBox>
 		</children>
