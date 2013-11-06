@@ -67,6 +67,11 @@ public class LiveWindowViewController
 			return false;
 	}
 
+	public boolean isShouldLabel(Object c)
+	{
+		return false; // never label any live window stuff
+	}
+
 	/**
 	 * @return the tab
 	 */
