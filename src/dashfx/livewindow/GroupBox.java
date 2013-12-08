@@ -41,7 +41,7 @@ import javafx.scene.layout.VBox;
  *
  * @author patrick
  */
-@Designable(value = "LW Box", description = "Live Window VBox Grouping with title")
+@Designable(value = "LW Box", description = "Live Window VBox Grouping with title", image = "/dashfx/livewindow/res/LW box.png")
 @Category("LiveWindow")
 public class GroupBox extends PaneControlBase<VBox>
 {
