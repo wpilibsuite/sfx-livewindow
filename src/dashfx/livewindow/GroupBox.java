@@ -19,6 +19,7 @@ package dashfx.livewindow;
 import dashfx.controls.bases.PaneControlBase;
 import dashfx.lib.controls.Category;
 import dashfx.lib.controls.Control;
+import dashfx.lib.controls.DashFXProperties;
 import dashfx.lib.controls.Designable;
 import dashfx.lib.controls.ResizeDirections;
 import dashfx.lib.data.DataCoreProvider;
@@ -43,6 +44,7 @@ import javafx.scene.layout.VBox;
  */
 @Designable(value = "LW Box", description = "Live Window VBox Grouping with title", image = "/dashfx/livewindow/res/LW box.png")
 @Category("LiveWindow")
+@DashFXProperties("Sealed: false, Save Children: true")
 public class GroupBox extends PaneControlBase<VBox>
 {
 	TitledPane tp;
